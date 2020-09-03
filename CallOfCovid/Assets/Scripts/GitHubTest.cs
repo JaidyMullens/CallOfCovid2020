@@ -13,6 +13,6 @@ public class GitHubTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        string name  = "Hola";
     }
 }
