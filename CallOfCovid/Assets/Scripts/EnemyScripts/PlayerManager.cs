@@ -11,8 +11,9 @@ public class PlayerManager : MonoBehaviour
     {
 
         instance = this;
-        GUIUtility.ExitGUI();
+
     }
+
     #endregion
 
     public GameObject player;
