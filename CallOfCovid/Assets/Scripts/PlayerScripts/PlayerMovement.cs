@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool isSprinting;
 
+    bool movingForward;
+
 
 
     // Update is called once per frame
@@ -30,8 +32,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isSprinting = Input.GetKey("r");
+        movingForward = Input.GetKey("w");
 
-        if (isSprinting)
+        if (isSprinting && movingForward)
         {
             speed = sprintSpeed;
         }
