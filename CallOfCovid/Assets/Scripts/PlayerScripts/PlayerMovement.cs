@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool isSprinting;
 
+    bool movingForward;
+
 
 
     // Update is called once per frame
@@ -30,8 +32,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isSprinting = Input.GetKey("r");
+        movingForward = Input.GetKey("w");
 
-        if (isSprinting)
+        if (isSprinting && movingForward)
         {
             speed = sprintSpeed;
         }
@@ -39,10 +42,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             speed = resetSpeed;
-        }
-        
-
-       
+        } 
 
         if (isGrounded && velocity.y < 0)
         {
@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-
 
         Vector3 move = transform.right * X + transform.forward * Z;
 
