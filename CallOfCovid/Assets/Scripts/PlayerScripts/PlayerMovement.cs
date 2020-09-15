@@ -39,10 +39,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             speed = resetSpeed;
-        }
-        
-
-       
+        } 
 
         if (isGrounded && velocity.y < 0)
         {
@@ -56,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-
 
         Vector3 move = transform.right * X + transform.forward * Z;
 

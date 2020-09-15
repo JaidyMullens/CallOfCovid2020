@@ -26,11 +26,18 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(target.position);
 
 
-            if (distance <= agent.stoppingDistance)
+            if (distance <= agent.stoppingDistance - 2)
             {
                 // Attack the target
                 // Face the target
                 FaceTarget();
+                Health playerHealth = target.GetComponent<Health>();
+
+                playerHealth.health -= 1;
+
+                Debug.Log(playerHealth);
+
+                Debug.Log("This is working!");
             }
         }
     }
