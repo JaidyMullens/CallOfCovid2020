@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
@@ -9,38 +10,68 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
 
+    GameManager gameManager;
+
     void Start()
     {
         
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-       
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
+
+    public float attackRadius = 5f;
+
+    private DateTime lastAttack = DateTime.Now;
 
     void Update()
     {
+ 
         float distance = Vector3.Distance(target.position, transform.position);
 
+       
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
 
 
-            if (distance <= agent.stoppingDistance - 2)
+            if (distance <= agent.stoppingDistance)
             {
-                // Attack the target
-                // Face the target
+               
                 FaceTarget();
-                Health playerHealth = target.GetComponent<Health>();
+                Debug.Log("Distance is 5 or smaller!");
+                
+                // Here we should already attack the player through particles -------------
 
-                playerHealth.health -= 1;
-
-                Debug.Log(playerHealth);
-
-                Debug.Log("This is working!");
+                if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
+                {
+                    //  InvokeRepeating("attack", 1f, 0);
+                    attack();
+                }
+         
+                
             }
+
+
         }
+      
     }
+
+    void attack()
+    {
+        if (lastAttack.AddSeconds(3) < DateTime.Now) // Hij telt 3 seconden, en alleen als de attack langer dan 3 seconden geleden is kan je aanvallen
+        {
+            gameManager.playerHealth.health = gameManager.playerHealth.health - 1;
+            GameObject.Find("GFX").GetComponent<MeshRenderer>().material.color = Color.green;
+            lastAttack = DateTime.Now; // Reset de timer
+        }
+     
+    }
+
+
+
 
     void FaceTarget()
     {
@@ -59,5 +90,9 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
+
     }
 }

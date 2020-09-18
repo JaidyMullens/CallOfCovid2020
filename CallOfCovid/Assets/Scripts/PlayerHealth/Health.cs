@@ -8,12 +8,21 @@ public class Health : MonoBehaviour
     public int health;
     public int numOfHearts;
 
+    public GameManager gameManager;
+
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        health = gameManager.playerHealth.health;
+    }
+
     void Update()
     {
+        
         for (int i = 0; i < hearts.Length; i++)
         {
 
