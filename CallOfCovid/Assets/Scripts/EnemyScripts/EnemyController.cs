@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
 
     GameManager gameManager;
 
+    Transform particleJoint;
+
+    public Color gfx;
     void Start()
     {
         
@@ -19,6 +22,14 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        //particleJoint = GameObject.Find("ParticleJoint").transform;
+
+        particleJoint = this.transform.Find("ParticleJoint");
+        //GameObject.Find("GFX").GetComponent<MeshRenderer>().material.color;
+        //gfx = this.GetComponent<MeshRenderer>().material.color;
+
+
 
     }
 
@@ -48,6 +59,7 @@ public class EnemyController : MonoBehaviour
                 if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
                 {
                     //  InvokeRepeating("attack", 1f, 0);
+                    //sneezeEffect.Pause();
                     attack();
                 }
          
@@ -56,16 +68,25 @@ public class EnemyController : MonoBehaviour
 
 
         }
-      
+        // For the particle system
+        sneezeEffect.transform.position = particleJoint.position;
+        sneezeEffect.transform.rotation = particleJoint.rotation;
     }
 
+    [SerializeField] public ParticleSystem sneezeEffect = null;
     void attack()
     {
         if (lastAttack.AddSeconds(3) < DateTime.Now) // Hij telt 3 seconden, en alleen als de attack langer dan 3 seconden geleden is kan je aanvallen
         {
-            gameManager.playerHealth.health = gameManager.playerHealth.health - 1;
-            GameObject.Find("GFX").GetComponent<MeshRenderer>().material.color = Color.green;
+            //Instantiate(sneezeEffect, particleJoint.position, Quaternion.identity);
+        
+            sneezeEffect.Play();
+            gameManager.playerHealth.health -= 1;
+            //GameObject.Find("GFX").GetComponent<MeshRenderer>().material.color = Color.green;
+            //gfx.
             lastAttack = DateTime.Now; // Reset de timer
+
+            Debug.Log("Sneeze = " + sneezeEffect);
         }
      
     }
@@ -90,7 +111,7 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
-
+        
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
