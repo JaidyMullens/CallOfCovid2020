@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297654375723474509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0.6315806, y: -0.1951659, z: 1.8875954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9206824861563867138}
@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a2dbbe23e48c145816e3345aa8bf60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  lifeDuration: 2
+  GunSpawn: {fileID: 0}
 --- !u!135 &7898133949697990640
 SphereCollider:
   m_ObjectHideFlags: 0
