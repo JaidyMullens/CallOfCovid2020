@@ -6,11 +6,12 @@ public class Player : MonoBehaviour
 {
     public GameObject playerCamera;
     public GameObject bulletPrefab;
+    public Transform bulletSpawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bulletSpawn = GameObject.Find("BulletSpawn").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             GameObject bulletObject = Instantiate (bulletPrefab);
-            bulletObject.transform.position = transform.position = playerCamera.transform.forward;
+            bulletObject.transform.position = bulletSpawn.position;
             bulletObject.transform.forward = playerCamera.transform.forward;
         }
     }
