@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 14471374}
   - component: {fileID: 14471373}
   - component: {fileID: 14471372}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 20176481}
   - component: {fileID: 20176480}
   - component: {fileID: 20176479}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 32576864}
   - component: {fileID: 32576863}
   - component: {fileID: 32576862}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 76576942}
   - component: {fileID: 76576941}
   - component: {fileID: 76576940}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 151157671}
   - component: {fileID: 151157670}
   - component: {fileID: 151157669}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 247856697}
   - component: {fileID: 247856696}
   - component: {fileID: 247856695}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 388124546}
   - component: {fileID: 388124545}
   - component: {fileID: 388124544}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 430036686}
   - component: {fileID: 430036685}
   - component: {fileID: 430036684}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 462361015}
   - component: {fileID: 462361014}
   - component: {fileID: 462361013}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573062012}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope with stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 594273614}
   - component: {fileID: 594273613}
   - component: {fileID: 594273612}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 639196945}
   - component: {fileID: 639196944}
   - component: {fileID: 639196943}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1576,7 @@ GameObject:
   - component: {fileID: 711146189}
   - component: {fileID: 711146188}
   - component: {fileID: 711146187}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1704,7 +1704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814785543}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 823802002}
   - component: {fileID: 823802001}
   - component: {fileID: 823802000}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1837,7 @@ GameObject:
   - component: {fileID: 848278249}
   - component: {fileID: 848278248}
   - component: {fileID: 848278247}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,7 +1932,7 @@ GameObject:
   - component: {fileID: 912061288}
   - component: {fileID: 912061287}
   - component: {fileID: 912061286}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2027,7 +2027,7 @@ GameObject:
   - component: {fileID: 923412027}
   - component: {fileID: 923412026}
   - component: {fileID: 923412025}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2157,7 +2157,7 @@ GameObject:
   - component: {fileID: 954782261}
   - component: {fileID: 954782260}
   - component: {fileID: 954782259}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2482,7 +2482,7 @@ GameObject:
   - component: {fileID: 1003548564}
   - component: {fileID: 1003548563}
   - component: {fileID: 1003548562}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2577,7 @@ GameObject:
   - component: {fileID: 1014962711}
   - component: {fileID: 1014962710}
   - component: {fileID: 1014962709}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2672,7 +2672,7 @@ GameObject:
   - component: {fileID: 1074434381}
   - component: {fileID: 1074434380}
   - component: {fileID: 1074434379}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2767,7 @@ GameObject:
   - component: {fileID: 1170881596}
   - component: {fileID: 1170881595}
   - component: {fileID: 1170881594}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 1193003974}
   - component: {fileID: 1193003973}
   - component: {fileID: 1193003972}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2957,7 +2957,7 @@ GameObject:
   - component: {fileID: 1244106171}
   - component: {fileID: 1244106170}
   - component: {fileID: 1244106169}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3049,7 +3049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250762032}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope with stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3299,7 +3299,7 @@ GameObject:
   - component: {fileID: 1352978470}
   - component: {fileID: 1352978469}
   - component: {fileID: 1352978468}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3394,7 +3394,7 @@ GameObject:
   - component: {fileID: 1365105384}
   - component: {fileID: 1365105383}
   - component: {fileID: 1365105382}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3751,7 +3751,7 @@ GameObject:
   - component: {fileID: 1403012293}
   - component: {fileID: 1403012292}
   - component: {fileID: 1403012291}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3846,7 +3846,7 @@ GameObject:
   - component: {fileID: 1425897300}
   - component: {fileID: 1425897299}
   - component: {fileID: 1425897298}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4036,7 +4036,7 @@ GameObject:
   - component: {fileID: 1627564582}
   - component: {fileID: 1627564581}
   - component: {fileID: 1627564580}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4131,7 +4131,7 @@ GameObject:
   - component: {fileID: 1707984148}
   - component: {fileID: 1707984147}
   - component: {fileID: 1707984146}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4226,7 +4226,7 @@ GameObject:
   - component: {fileID: 1746782881}
   - component: {fileID: 1746782880}
   - component: {fileID: 1746782879}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4318,7 +4318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1788833170}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope with stairs (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4458,7 +4458,7 @@ GameObject:
   - component: {fileID: 1830448287}
   - component: {fileID: 1830448286}
   - component: {fileID: 1830448285}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4553,7 +4553,7 @@ GameObject:
   - component: {fileID: 1908962461}
   - component: {fileID: 1908962460}
   - component: {fileID: 1908962459}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4648,7 +4648,7 @@ GameObject:
   - component: {fileID: 1921269858}
   - component: {fileID: 1921269857}
   - component: {fileID: 1921269856}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4743,7 +4743,7 @@ GameObject:
   - component: {fileID: 1943980163}
   - component: {fileID: 1943980162}
   - component: {fileID: 1943980161}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,7 +4838,7 @@ GameObject:
   - component: {fileID: 2013120941}
   - component: {fileID: 2013120940}
   - component: {fileID: 2013120939}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: slope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4933,7 +4933,7 @@ GameObject:
   - component: {fileID: 2018505134}
   - component: {fileID: 2018505133}
   - component: {fileID: 2018505132}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
