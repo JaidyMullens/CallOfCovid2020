@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,8 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 20f;
     public float gravity = -9.81f;
 
-    public float stamina = 5;
-    public float maxStamina = 5;
+   
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool movingForward;
 
+    bool keyEnabled = true;
+
     Rect staminaRect;
     Texture2D staminaTexture;
 
@@ -35,21 +37,37 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        staminaRect = new Rect(Screen.width / 10, Screen.height * 9 / 10, Screen.width / 3, Screen.height / 50);
-
-        staminaTexture = new Texture2D(1, 1);
-        staminaTexture.SetPixel(0, 0, Color.white);
-        staminaTexture.Apply();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isSprinting)
+        {
+            StaminaBar.instance.useStamina(1);
+        }
+        if (StaminaBar.instance.currentStamina == 0 /*&& StaminaBar.instance.currentStamina != StaminaBar.instance.maxStamina*/)
+        {
+            keyEnabled = false;
+            
+        }
+        if (!isSprinting)
+        {
+            StaminaBar.instance.addStamina(1);
+        }
+
+        if (StaminaBar.instance.currentStamina > 1000 /*StaminaBar.instance.maxStamina*/)
+        {
+            keyEnabled = true;
+        }
+        
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isSprinting = Input.GetKey("r");
         movingForward = Input.GetKey("w");
 
-        if (isSprinting && movingForward)
+        if (isSprinting && movingForward && keyEnabled)
         {
             speed = sprintSpeed;
         }
@@ -79,21 +97,5 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-
-        if (isSprinting)
-        {
-            stamina-=1;
-        }
-
-
-
-    }
-
-    private void OnGUI()
-    {
-        float ratio = stamina / maxStamina;
-        float rectWidth = ratio * Screen.width / 3;
-        staminaRect.width = rectWidth;
-        GUI.DrawTexture(staminaRect, staminaTexture);
     }
 }
