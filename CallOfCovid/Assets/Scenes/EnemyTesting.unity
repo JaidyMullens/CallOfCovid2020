@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17619924, g: 0.22051941, b: 0.30284527, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 79a7b01e2c205824e82e7fbcbe606bef, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 8c838e011e1e452479da8fbeb7da61d8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -169,7 +169,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17670
+  m_Name: pb_Mesh17574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2548,7 +2548,7 @@ Transform:
   - {fileID: 1087117339}
   - {fileID: 291069573}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 189.799, z: 0}
 --- !u!114 &2075282284
 MonoBehaviour:
@@ -2748,7 +2748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308850267209353556, guid: 4037fa9c81d78624bb0fc1126aaf7f57, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3308850267209353556, guid: 4037fa9c81d78624bb0fc1126aaf7f57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
