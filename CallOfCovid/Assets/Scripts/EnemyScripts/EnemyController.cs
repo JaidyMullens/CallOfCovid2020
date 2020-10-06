@@ -22,14 +22,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
-        //particleJoint = GameObject.Find("ParticleJoint").transform;
-
         particleJoint = this.transform.Find("ParticleJoint");
-        //GameObject.Find("GFX").GetComponent<MeshRenderer>().material.color;
-        //gfx = this.GetComponent<MeshRenderer>().material.color;
-
-
 
     }
 
@@ -54,12 +47,10 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
                 Debug.Log("Distance is 5 or smaller!");
                 
-                // Here we should already attack the player through particles -------------
+             
 
                 if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
                 {
-                    //  InvokeRepeating("attack", 1f, 0);
-                    //sneezeEffect.Pause();
                     attack();
                 }
          
@@ -78,12 +69,10 @@ public class EnemyController : MonoBehaviour
     {
         if (lastAttack.AddSeconds(3) < DateTime.Now) // Hij telt 3 seconden, en alleen als de attack langer dan 3 seconden geleden is kan je aanvallen
         {
-            //Instantiate(sneezeEffect, particleJoint.position, Quaternion.identity);
+
         
             sneezeEffect.Play();
             gameManager.playerHealth.health -= 1;
-            //GameObject.Find("GFX").GetComponent<MeshRenderer>().material.color = Color.green;
-            //gfx.
             lastAttack = DateTime.Now; // Reset de timer
 
             Debug.Log("Sneeze = " + sneezeEffect);
