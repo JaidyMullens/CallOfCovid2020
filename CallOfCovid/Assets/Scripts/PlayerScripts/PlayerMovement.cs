@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        isSprinting = Input.GetKey("r");
+        isSprinting = Input.GetKey("r") && Input.GetKey("w");
         movingForward = Input.GetKey("w");
 
         if (isSprinting && movingForward && keyEnabled)
