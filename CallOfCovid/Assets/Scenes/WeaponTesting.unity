@@ -339,9 +339,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1094274185}
-  - component: {fileID: 1094274186}
   m_Layer: 0
-  m_Name: BulletSpawn
+  m_Name: shootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,35 +360,6 @@ Transform:
   m_Father: {fileID: 178732079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1094274186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094274184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bea37a6db7c2b488ab49e4c1373fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 297654375723474509, guid: f1e193c700b519c41b678df18f5d1458, type: 3}
-  shootForce: 0
-  upwardForce: 0
-  timeBetweenShooting: 0
-  spread: 0
-  reloadTime: 3
-  timeBetweenShots: 0
-  magazineSize: 10
-  bulletsPerTap: 1
-  allowButtonHold: 1
-  playerRb: {fileID: 0}
-  recoilForce: 0
-  fpsCam: {fileID: 0}
-  attackPoint: {fileID: 0}
-  muzzleFlash: {fileID: 0}
-  ammunitionDisplay: {fileID: 0}
-  allowInvoke: 1
 --- !u!1 &1263978003
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,26 +466,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1628223914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bea37a6db7c2b488ab49e4c1373fe2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9703b0542d195874c9b5d1ef4aad2cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 297654375723474509, guid: f1e193c700b519c41b678df18f5d1458, type: 3}
-  shootForce: 0
-  upwardForce: 0
-  timeBetweenShooting: 1
-  spread: 0
-  reloadTime: 3
-  timeBetweenShots: 1
-  magazineSize: 20
-  bulletsPerTap: 1
-  allowButtonHold: 1
-  playerRb: {fileID: 0}
-  recoilForce: 0
-  fpsCam: {fileID: 1691456057}
-  attackPoint: {fileID: 1094274185}
-  muzzleFlash: {fileID: 0}
-  ammunitionDisplay: {fileID: 0}
-  allowInvoke: 1
+  shootKey: 102
+  projectile: {fileID: 297654375723474509, guid: f1e193c700b519c41b678df18f5d1458, type: 3}
+  shootForce: 5000
 --- !u!1 &1691456052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -557,11 +513,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!20 &1691456057 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 1714257192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1714257192
 PrefabInstance:
   m_ObjectHideFlags: 0
