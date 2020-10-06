@@ -20,7 +20,9 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKeyDown(shootKey))
         {
-            GameObject shot = GameObject.Instantiate(projectile, shootingPoint.position, transform.rotation);
+            // Debug.Log(); Voor console testen
+            // Debug.Log(shootingPoint.rotation);
+            GameObject shot = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(90f, 90f, 0f));
             shot.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
         }
     }
