@@ -13,8 +13,11 @@ public class EnemyController : MonoBehaviour
     GameManager gameManager;
 
     Transform particleJoint;
-
+  
     public Color gfx;
+
+    // Animation
+    public Animator anim;
     void Start()
     {
         
@@ -23,6 +26,8 @@ public class EnemyController : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         particleJoint = this.transform.Find("ParticleJoint");
+
+        anim = this.GetComponent<Animator>();
 
     }
 
@@ -62,6 +67,9 @@ public class EnemyController : MonoBehaviour
         // For the particle system
         sneezeEffect.transform.position = particleJoint.position;
         sneezeEffect.transform.rotation = particleJoint.rotation;
+
+        // Pas de animation aan, aan de snelheid
+        anim.SetFloat("y", agent.desiredVelocity.magnitude);
     }
 
     [SerializeField] public ParticleSystem sneezeEffect = null;
