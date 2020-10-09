@@ -13,11 +13,9 @@ public class EnemyController : MonoBehaviour
     GameManager gameManager;
 
     Transform particleJoint;
-  
-    public Color gfx;
 
     // Animation
-    public Animator anim;
+    Animator anim;
     void Start()
     {
         
@@ -87,8 +85,6 @@ public class EnemyController : MonoBehaviour
         }
      
     }
-
-
 
 
     void FaceTarget()
