@@ -12,20 +12,21 @@ public class Shooting : MonoBehaviour
 
     public KeyCode aimKey = KeyCode.Mouse1;
 
-    Transform gunTransform;
+    public float aimSpeed;
+
+
 
     // Use this for initialization
     void Start()
     {
         shootingPoint = GameObject.Find("shootingPoint").transform;
-        gunTransform = GetComponent<Transform>().transform;
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(shootKey))
+        if (Input.GetKeyDown(shootKey) && Input.GetMouseButton(1)) // Check if the player wants to shoot AND if the player is aiming
         {
             // Debug.Log(); Voor console testen
             // Debug.Log(shootingPoint.rotation);
@@ -33,17 +34,33 @@ public class Shooting : MonoBehaviour
             shot.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
         }
 
-        if (Input.GetKeyDown(aimKey))
-        {
-            gunTransform.position = new Vector3(0, gunTransform.position.y, gunTransform.position.z); ;
-        }
-
-        Debug.Log(gunTransform.position);
+     
+            Aim(Input.GetMouseButton(1));
+        
+            
 
     }
 
-    void OnCollisionEnter(Collision col)
+    public GameObject currentWeapon;
+
+    void Aim(bool p_isAiming)
     {
-        Destroy(this.gameObject);
+        Transform t_anchor = currentWeapon.transform.Find("Anchor").transform;
+        Transform t_anchorAim = currentWeapon.transform.Find("Aim Anchor").transform;
+        Transform t_hip = currentWeapon.transform.Find("Hip").transform;
+
+        if (p_isAiming)
+        {
+            // Aim
+            t_anchor.position = Vector3.Lerp(t_anchor.position, t_anchorAim.position, Time.deltaTime * 20);
+
+        }
+        else
+        {
+            // Back to side
+            t_anchor.position = Vector3.Lerp(t_anchor.position, t_hip.position, Time.deltaTime * 20);
+        }
     }
+
+    
 }
