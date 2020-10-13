@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &440197003107882979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441045913742886276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9703b0542d195874c9b5d1ef4aad2cb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootKey: 323
-  projectile: {fileID: 1036379582816686996, guid: 0e6099690b9d9cd4c8328e8f9bbe550c, type: 3}
-  shootForce: 2000
-  aimKey: 324
-  aimSpeed: 0
-  currentWeapon: {fileID: 441045913742886276}
 --- !u!1 &440197003160435816
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +435,24 @@ Transform:
   m_Father: {fileID: 438352070658490966}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &440197003107882979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441045913742886276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9703b0542d195874c9b5d1ef4aad2cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootKey: 323
+  projectile: {fileID: 1036379582816686996, guid: 0e6099690b9d9cd4c8328e8f9bbe550c, type: 3}
+  shootForce: 2000
+  aimKey: 324
+  aimSpeed: 0
+  currentWeapon: {fileID: 441045913742886276}
 --- !u!1001 &440197003800416502
 PrefabInstance:
   m_ObjectHideFlags: 0
