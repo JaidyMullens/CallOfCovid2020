@@ -23,8 +23,9 @@ public class Shooting : MonoBehaviour
        
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void FixedUpdate()
     {
         if (Input.GetKeyDown(shootKey) && Input.GetMouseButton(1)) // Check if the player wants to shoot AND if the player is aiming
         {
@@ -34,11 +35,8 @@ public class Shooting : MonoBehaviour
             shot.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
         }
 
-     
-            Aim(Input.GetMouseButton(1));
-        
-            
 
+        Aim(Input.GetMouseButton(1));
     }
 
     public GameObject currentWeapon;
