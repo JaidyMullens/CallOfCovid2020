@@ -13,16 +13,15 @@ public class EnemyController : MonoBehaviour
     GameManager gameManager;
 
     Transform particleJoint;
-  
-    public Color gfx;
 
     // Animation
-    public Animator anim;
+    Animator anim;
     void Start()
     {
         
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        //agent.baseOffset = false;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         particleJoint = this.transform.Find("ParticleJoint");
@@ -40,36 +39,59 @@ public class EnemyController : MonoBehaviour
  
         float distance = Vector3.Distance(target.position, transform.position);
 
-       
-        if (distance <= lookRadius)
+        if (target != null)
         {
-            agent.SetDestination(target.position);
-
-
-            if (distance <= agent.stoppingDistance)
+            anim.SetFloat("y", agent.desiredVelocity.magnitude);
+            if (distance <= lookRadius)
             {
-               
-                FaceTarget();
-                Debug.Log("Distance is 5 or smaller!");
-                
-             
+                agent.SetDestination(target.position);
 
-                if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
+
+                if (distance <= agent.stoppingDistance)
                 {
-                    attack();
+
+                    FaceTarget();
+                    Debug.Log("Distance is 5 or smaller!");
+
+                    if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
+                    {
+                        attack();
+                    }
+
+
                 }
-         
-                
+
+
             }
 
-
         }
+       
+     
         // For the particle system
         sneezeEffect.transform.position = particleJoint.position;
         sneezeEffect.transform.rotation = particleJoint.rotation;
 
         // Pas de animation aan, aan de snelheid
-        anim.SetFloat("y", agent.desiredVelocity.magnitude);
+        
+
+        Debug.Log("Navmesh agent: " + agent);
+
+        if (Input.GetKeyDown("f"))
+        {
+            Debug.Log("Key pressed!");
+            anim.enabled = false;
+            agent.enabled = false;
+            target = null;
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("arrow"))
+        {
+            //this.anim.enabled = false;
+            Debug.Log("Collided with arrow!");
+        }
     }
 
     [SerializeField] public ParticleSystem sneezeEffect = null;
@@ -87,8 +109,6 @@ public class EnemyController : MonoBehaviour
         }
      
     }
-
-
 
 
     void FaceTarget()
