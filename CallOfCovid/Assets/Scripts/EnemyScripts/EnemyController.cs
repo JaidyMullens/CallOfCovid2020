@@ -6,9 +6,13 @@ using System;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
+    public int maxArmor = 4;
+    public int currentArmor;
 
     Transform target;
     NavMeshAgent agent;
+
+    public Armor armor;
 
     GameManager gameManager;
 
@@ -29,7 +33,9 @@ public class EnemyController : MonoBehaviour
         particleJoint = this.transform.Find("ParticleJoint");
 
         anim = this.GetComponent<Animator>();
-        
+        //armor
+        currentArmor = 0;
+        armor.SetArmor(currentArmor);
     }
 
     public float attackRadius = 5f;
@@ -99,7 +105,15 @@ public class EnemyController : MonoBehaviour
 
         
             sneezeEffect.Play();
-            gameManager.playerHealth.health -= 1;
+            if(currentArmor > 0)
+            {
+                currentArmor -= 1;
+                armor.SetArmor(currentArmor);
+            }
+            else
+            {
+                gameManager.playerHealth.health -= 1;
+            }
             lastAttack = DateTime.Now; // Reset de timer
 
             Debug.Log("Sneeze = " + sneezeEffect);
