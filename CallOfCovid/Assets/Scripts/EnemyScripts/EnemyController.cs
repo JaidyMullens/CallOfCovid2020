@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
 
     // Animation
     Animator anim;
+
+    float distance;
     void Start()
     {
         
@@ -27,7 +29,7 @@ public class EnemyController : MonoBehaviour
         particleJoint = this.transform.Find("ParticleJoint");
 
         anim = this.GetComponent<Animator>();
-
+        
     }
 
     public float attackRadius = 5f;
@@ -37,13 +39,15 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
  
-        float distance = Vector3.Distance(target.position, transform.position);
+        
 
         if (target != null)
         {
+            distance = Vector3.Distance(target.position, transform.position);
             anim.SetFloat("y", agent.desiredVelocity.magnitude);
             if (distance <= lookRadius)
             {
+                //this.GetComponent<SkinnedMeshRenderer>().material.name = "eyes";
                 agent.SetDestination(target.position);
 
 
@@ -71,18 +75,6 @@ public class EnemyController : MonoBehaviour
         sneezeEffect.transform.position = particleJoint.position;
         sneezeEffect.transform.rotation = particleJoint.rotation;
 
-        // Pas de animation aan, aan de snelheid
-        
-
-        Debug.Log("Navmesh agent: " + agent);
-
-        if (Input.GetKeyDown("f"))
-        {
-            Debug.Log("Key pressed!");
-            anim.enabled = false;
-            agent.enabled = false;
-            target = null;
-        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -91,6 +83,11 @@ public class EnemyController : MonoBehaviour
         {
             //this.anim.enabled = false;
             Debug.Log("Collided with arrow!");
+            this.anim.enabled = false;
+            target = null;
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            this.GetComponent<NavMeshAgent>().enabled = false;
+           
         }
     }
 

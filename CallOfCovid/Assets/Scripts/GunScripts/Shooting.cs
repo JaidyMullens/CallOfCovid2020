@@ -20,43 +20,46 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         shootingPoint = GameObject.Find("shootingPoint").transform;
-       
+
     }
 
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(shootKey) && Input.GetMouseButton(1)) // Check if the player wants to shoot AND if the player is aiming
         {
             // Debug.Log(); Voor console testen
+
             // Debug.Log(shootingPoint.rotation);
+
             GameObject shot = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(90f, 90f, 0f));
             shot.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
+        
         }
 
-
         Aim(Input.GetMouseButton(1));
+
     }
 
-    public GameObject currentWeapon;
+     public GameObject currentWeapon;
 
     void Aim(bool p_isAiming)
     {
-        Transform t_anchor = currentWeapon.transform.Find("Anchor").transform;
-        Transform t_anchorAim = currentWeapon.transform.Find("Aim Anchor").transform;
-        Transform t_hip = currentWeapon.transform.Find("Hip").transform;
+        Transform t_anchor = currentWeapon.transform.parent.transform;
+        Transform t_anchorAim = currentWeapon.transform.parent.parent.Find("Aim Anchor").transform;
+        Transform t_hip = currentWeapon.transform.parent.parent.Find("Hip").transform;
 
         if (p_isAiming)
         {
             // Aim
-            t_anchor.position = Vector3.Lerp(t_anchor.position, t_anchorAim.position, Time.deltaTime * 20);
+            t_anchor.position = Vector3.Lerp(t_anchor.position, t_anchorAim.position, Time.deltaTime * aimSpeed);
 
         }
         else
         {
             // Back to side
-            t_anchor.position = Vector3.Lerp(t_anchor.position, t_hip.position, Time.deltaTime * 20);
+            t_anchor.position = Vector3.Lerp(t_anchor.position, t_hip.position, Time.deltaTime * aimSpeed);
         }
     }
 
