@@ -14,29 +14,30 @@ public class Shooting : MonoBehaviour
 
     public float aimSpeed;
 
-
+    public GameObject distortionEffect;
 
     // Use this for initialization
     void Start()
     {
         shootingPoint = GameObject.Find("shootingPoint").transform;
-
+        // waveEffect = currentWeapon.transform.Find("WaveEffect").GetComponentInChildren<ParticleSystem>();
+        distortionEffect.SetActive(false);
     }
 
-
+    //[SerializeField] ParticleSystem waveEffect;
 
     private void Update()
     {
         if (Input.GetKeyDown(shootKey) && Input.GetMouseButton(1)) // Check if the player wants to shoot AND if the player is aiming
         {
-            // Debug.Log(); Voor console testen
 
-            // Debug.Log(shootingPoint.rotation);
 
             GameObject shot = GameObject.Instantiate(projectile, shootingPoint.position, shootingPoint.rotation * Quaternion.Euler(90f, 90f, 0f));
             shot.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
-        
+
+
         }
+
 
         Aim(Input.GetMouseButton(1));
 
@@ -54,6 +55,7 @@ public class Shooting : MonoBehaviour
         {
             // Aim
             t_anchor.position = Vector3.Lerp(t_anchor.position, t_anchorAim.position, Time.deltaTime * aimSpeed);
+ 
 
         }
         else
