@@ -1161,6 +1161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 14
+  maxArmor: 4
+  currentArmor: 0
+  armor: {fileID: 0}
   attackRadius: 5
   sneezeEffect: {fileID: 938828799376622754}
 --- !u!195 &3595902085005423631

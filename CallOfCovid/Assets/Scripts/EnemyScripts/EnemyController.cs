@@ -34,8 +34,8 @@ public class EnemyController : MonoBehaviour
 
         anim = this.GetComponent<Animator>();
         //armor
-        currentArmor = 0;
-        armor.SetArmor(currentArmor);
+        //currentArmor = 0;
+        //armor.SetArmor(currentArmor);
     }
 
     public float attackRadius = 5f;
