@@ -6,9 +6,13 @@ using System;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
+    public int maxArmor = 4;
+    public int currentArmor;
 
     Transform target;
     NavMeshAgent agent;
+
+    public Armor armor;
 
     GameManager gameManager;
 
@@ -16,17 +20,22 @@ public class EnemyController : MonoBehaviour
 
     // Animation
     Animator anim;
+
+    float distance;
     void Start()
     {
         
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        //agent.baseOffset = false;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         particleJoint = this.transform.Find("ParticleJoint");
 
         anim = this.GetComponent<Animator>();
-
+        //armor
+        //currentArmor = 0;
+        //armor.SetArmor(currentArmor);
     }
 
     public float attackRadius = 5f;
@@ -36,38 +45,56 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
  
-        float distance = Vector3.Distance(target.position, transform.position);
+        
 
-       
-        if (distance <= lookRadius)
+        if (target != null)
         {
-            agent.SetDestination(target.position);
-
-
-            if (distance <= agent.stoppingDistance)
+            distance = Vector3.Distance(target.position, transform.position);
+            anim.SetFloat("y", agent.desiredVelocity.magnitude);
+            if (distance <= lookRadius)
             {
-               
-                FaceTarget();
-                Debug.Log("Distance is 5 or smaller!");
-                
-             
+                //this.GetComponent<SkinnedMeshRenderer>().material.name = "eyes";
+                agent.SetDestination(target.position);
 
-                if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
+
+                if (distance <= agent.stoppingDistance)
                 {
-                    attack();
+
+                    FaceTarget();
+                    Debug.Log("Distance is 5 or smaller!");
+
+                    if (gameManager.playerHealth.health > 0 && distance <= attackRadius)
+                    {
+                        attack();
+                    }
+
+
                 }
-         
-                
+
+
             }
 
-
         }
+       
+     
         // For the particle system
         sneezeEffect.transform.position = particleJoint.position;
         sneezeEffect.transform.rotation = particleJoint.rotation;
 
-        // Pas de animation aan, aan de snelheid
-        anim.SetFloat("y", agent.desiredVelocity.magnitude);
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Arrow"))
+        {
+            //this.anim.enabled = false;
+            Debug.Log("Collided with arrow!");
+            this.anim.enabled = false;
+            target = null;
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            this.GetComponent<NavMeshAgent>().enabled = false;
+           
+        }
     }
 
     [SerializeField] public ParticleSystem sneezeEffect = null;
@@ -78,7 +105,15 @@ public class EnemyController : MonoBehaviour
 
         
             sneezeEffect.Play();
-            gameManager.playerHealth.health -= 1;
+            if(currentArmor > 0)
+            {
+                currentArmor -= 1;
+                armor.SetArmor(currentArmor);
+            }
+            else
+            {
+                gameManager.playerHealth.health -= 1;
+            }
             lastAttack = DateTime.Now; // Reset de timer
 
             Debug.Log("Sneeze = " + sneezeEffect);

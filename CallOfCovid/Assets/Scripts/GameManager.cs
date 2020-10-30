@@ -7,14 +7,9 @@ public class GameManager : MonoBehaviour
 
     public Health playerHealth;
 
-     void Start()
+    void Start()
     {
         playerHealth = GameObject.Find("TestPlayer").GetComponent<Health>();
-    }
-
-    void Update()
-    {
-        Debug.Log("Player GameManager health = " + playerHealth.health);
     }
 
 
