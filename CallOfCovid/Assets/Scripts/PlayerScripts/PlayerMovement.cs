@@ -33,12 +33,6 @@ public class PlayerMovement : MonoBehaviour
     Rect staminaRect;
     Texture2D staminaTexture;
 
-    
-
-    private void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,11 +41,13 @@ public class PlayerMovement : MonoBehaviour
         {
             StaminaBar.instance.useStamina(1);
         }
+
         if (StaminaBar.instance.currentStamina == 0 /*&& StaminaBar.instance.currentStamina != StaminaBar.instance.maxStamina*/)
         {
             keyEnabled = false;
             
         }
+
         if (!isSprinting)
         {
             StaminaBar.instance.addStamina(1);

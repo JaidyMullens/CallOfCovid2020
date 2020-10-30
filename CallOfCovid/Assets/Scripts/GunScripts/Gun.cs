@@ -77,7 +77,7 @@ public class Gun : MonoBehaviour
         readyToShoot = false;
 
         //Find the exact hit position using a raycast
-        Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //Just a ray through the middle of your current view
+        Ray ray = fpsCam.ViewportPointToRay(new Vector3(0f, 0f, 0)); //Just a ray through the middle of your current view
         RaycastHit hit;
 
         //check if ray hits something
