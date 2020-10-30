@@ -85,7 +85,7 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("arrow"))
+        if (col.gameObject.CompareTag("Arrow"))
         {
             //this.anim.enabled = false;
             Debug.Log("Collided with arrow!");
