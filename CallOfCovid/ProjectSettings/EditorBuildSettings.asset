@@ -8,9 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-
-  - enabled: 0
-    path: Assets/Scenes/EnemyTesting.unity
-    guid: 5347fe5afc396914180b125a781dcaef
-
+  - enabled: 1
+    path: Assets/Scenes/WeaponTesting.unity
+    guid: 7e8af7d2784b40042b8d65ea82b611d2
   m_configObjects: {}

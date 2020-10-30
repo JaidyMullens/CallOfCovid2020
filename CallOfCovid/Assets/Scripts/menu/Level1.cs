@@ -7,6 +7,6 @@ public class Level1 : MonoBehaviour
 {   
     public void level1()
     {
-        SceneManager.LoadScene("Level 01", LoadSceneMode.Single);
+        SceneManager.LoadScene("WeaponTesting", LoadSceneMode.Single);
     }
 }
