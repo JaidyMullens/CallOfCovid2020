@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        
+        Application.targetFrameRate = 300;
     }
 
     // Update is called once per frame
