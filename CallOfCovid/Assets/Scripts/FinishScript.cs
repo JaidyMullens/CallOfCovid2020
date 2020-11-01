@@ -9,7 +9,7 @@ public class FinishScript : MonoBehaviour
     {
         unloadScene();
 
-        SceneManager.LoadScene("MenuTesting");
+        SceneManager.LoadScene("Finish");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

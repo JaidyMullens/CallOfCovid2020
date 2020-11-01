@@ -17,7 +17,7 @@ public class ShootingManager : MonoBehaviour
         Debug.Log("Amount of ammo: " + ammoAmount);
         checkAmmo();
 
-        bulletText.text = "Bullets: " + ammoAmount + "/" + 35;
+        bulletText.text = "Bullets: " + ammoAmount + "/" + 45;
     }
 
     public bool checkAmmo()

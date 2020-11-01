@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         {
             unloadScene();
 
-            SceneManager.LoadScene("MenuTesting", LoadSceneMode.Single);
+            SceneManager.LoadScene("Dead", LoadSceneMode.Single);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
