@@ -7,15 +7,17 @@ public class armorPickUp : MonoBehaviour
 {
     public Armor armor;
     public EnemyController enemyArmor;
-
+    public GameManager gameManager;
     void OnTriggerEnter(Collider Col)
     {
         if (Col.CompareTag("Player"))
             Destroy(gameObject);
+
+
     }
     void OnDestroy()
     {
-        enemyArmor.currentArmor = enemyArmor.maxArmor;
-        armor.slider.value = enemyArmor.currentArmor;
+        gameManager.currentArmor = gameManager.maxArmor;
+        armor.slider.value = gameManager.currentArmor;
     }
 }

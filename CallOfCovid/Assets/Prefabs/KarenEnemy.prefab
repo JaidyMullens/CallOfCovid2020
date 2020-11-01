@@ -50,7 +50,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea660195cf1467841b787c4ea2a3f886, type: 2}
+  - {fileID: 5109664962698054616, guid: 9e51cf5a2294c8d4c97a44de54019f35, type: 3}
   - {fileID: -1129442977282135877, guid: 25b0cee1967ab3940a5a8eddbb2184e3, type: 3}
   - {fileID: 7784458794670323353, guid: 25b0cee1967ab3940a5a8eddbb2184e3, type: 3}
   - {fileID: 2348161307766744311, guid: 25b0cee1967ab3940a5a8eddbb2184e3, type: 3}
@@ -1161,9 +1161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 14
-  maxArmor: 4
-  currentArmor: 0
-  armor: {fileID: 0}
   attackRadius: 5
   sneezeEffect: {fileID: 938828799376622754}
 --- !u!195 &3595902085005423631

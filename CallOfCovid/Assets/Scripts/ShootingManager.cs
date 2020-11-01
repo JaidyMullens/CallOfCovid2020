@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootingManager : MonoBehaviour
 {
+    
     public int ammoAmount = 5;
 
+    public Text bulletText;
+
+    
+    
     void Update()
     {
         Debug.Log("Amount of ammo: " + ammoAmount);
         checkAmmo();
+
+        bulletText.text = "Bullets: " + ammoAmount + "/" + 35;
     }
 
     public bool checkAmmo()
