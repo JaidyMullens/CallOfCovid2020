@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class FinishScript : MonoBehaviour
 {
+    public GameManager gameManager;
+
+    private float recordTime;
     private void OnTriggerEnter(Collider other)
     {
+        gameManager.timerActive = false;
+
+        recordTime = gameManager.timerCount;
+
         unloadScene();
 
         SceneManager.LoadScene("Finish");
@@ -18,4 +25,6 @@ public class FinishScript : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
     }
+
+
 }

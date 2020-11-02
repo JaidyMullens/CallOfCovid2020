@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
 
-    GameManager gameManager;
+    public GameManager gameManager;
 
     Transform particleJoint;
 
@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         //agent.baseOffset = false;
 
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         particleJoint = this.transform.Find("ParticleJoint");
 
         anim = this.GetComponent<Animator>();
