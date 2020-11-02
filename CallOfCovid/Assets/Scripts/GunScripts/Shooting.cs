@@ -16,7 +16,7 @@ public class Shooting : MonoBehaviour
 
     public GameObject distortionEffect;
 
-    public ShootingManager shootingManager;
+    ShootingManager shootingManager;
 
     bool hasAmmo = false;
     // Use this for initialization
