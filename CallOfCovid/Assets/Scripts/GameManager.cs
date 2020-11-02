@@ -15,22 +15,16 @@ public class GameManager : MonoBehaviour
     public int currentArmor;
     public int maxArmor = 4;
 
-    public Text timerText;
-
-    public float timerCount = 0f;
-
-    public bool timerActive = false;
     void Start()
     {
-
+        DontDestroyOnLoad(this.gameObject);
         playerHealth = playerManager.player.GetComponent<Health>();
 
         //armor
         currentArmor = 0;
         playerArmor.SetArmor(currentArmor);
-        timerActive = true;
-
-        DontDestroyOnLoad(this);
+      
+    
     }
 
     void Update()
@@ -40,7 +34,7 @@ public class GameManager : MonoBehaviour
             if (playerHealth.health == 0)
             {
                 unloadScene();
-
+       
                 SceneManager.LoadScene("Dead", LoadSceneMode.Single);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -48,19 +42,8 @@ public class GameManager : MonoBehaviour
 
             }
         }
-    
 
-        if (timerActive)
-        {
-            timerCount += Time.deltaTime;
-        }
-
-        if (timerText != null)
-        {
-            timerText.text = "Time: " + timerCount.ToString("F2");
-        }
-
-       
+   
     }
 
     void unloadScene()
@@ -68,5 +51,5 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
-
+  
 }

@@ -10,9 +10,6 @@ public class FinishScript : MonoBehaviour
     private float recordTime;
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.timerActive = false;
-
-        recordTime = gameManager.timerCount;
 
         unloadScene();
 
